@@ -1,4 +1,5 @@
 import { Statistique } from './models/statistique';
+import { StatistiqueService } from './services/statistique.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,14 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pankov-evaluation-angular';
-  listStatistiques: Statistique[] = [
-    new Statistique('fa1f5f40-be3b-11eb-91ec-7f5875ecfb46', 'Démographie en France', '60M'),
-    new Statistique('e3b-11eb-91ec-7', 'Démographie en Allemagne', '80M'),
-    new Statistique('e1ec-7', 'Démographie en Biélorussie', '9M')
-  ];
+  listStatistique!: Statistique[];
 
-  constructor() {
-
+  constructor(public listStatistiques: StatistiqueService) {
+    this.listStatistique = listStatistiques.getStats()
   }
 
 }

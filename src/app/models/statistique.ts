@@ -1,4 +1,10 @@
 export class Statistique {
-    constructor(public id: string, public titre: string, public valeur: string) {
+    id: string;
+    titre: string
+    valeur: string
+    constructor(id: string, titre: string, valeur: string) {
+        this.id = id;
+        this.titre = titre;
+        this.valeur = valeur;
     }
 }
